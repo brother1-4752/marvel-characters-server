@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "prebuild": "rimraf dist && mkdir dist",
+    "build": "babel src -d dist",
+    "start": "node ./dist/server.js",
+    "start:dev": "babel-node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +16,14 @@
   "dependencies": {
     "apollo-server": "^3.12.0",
     "graphql": "^16.6.0",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.1",
+    "rimraf": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5",
     "nodemon": "^2.0.22"
   },
   "type": "module"

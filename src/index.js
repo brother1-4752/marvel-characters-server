@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { ApolloServer, gql } from "apollo-server";
 import fetch from "node-fetch";
 
@@ -50,6 +51,6 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(({ url }) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`Running on ${url}`);
 });

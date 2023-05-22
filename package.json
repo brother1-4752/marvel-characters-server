@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon src/server.js",
     "prebuild": "rimraf dist && mkdir dist",
     "build": "babel src -d dist",
     "start": "node ./dist/server.js",
-    "start:dev": "babel-node server.js"
+    "start:dev": "babel-node src/server.js"
   },
   "keywords": [],
   "author": "",

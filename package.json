@@ -26,5 +26,5 @@
     "@babel/preset-env": "^7.21.5",
     "nodemon": "^2.0.22"
   },
-  "type": "module"
+  "type": "commonjs"
 }
